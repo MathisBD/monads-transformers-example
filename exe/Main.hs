@@ -40,6 +40,7 @@ runMyMonad config state (MyMonad m) =
         Right ((x, logs), state') -> Right (x, state', logs)
 
 -- Simple example of using the monad.
+-- Notice that we DON'T use "lift", and we don't care how we composed the monad transformers.
 example :: Int -> MyMonad Int
 example x = do
   -- Log the argument.
